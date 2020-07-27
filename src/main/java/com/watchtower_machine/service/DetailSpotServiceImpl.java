@@ -17,7 +17,7 @@ public class DetailSpotServiceImpl implements IDetailSpotService{
     private Optional<DetailSpot> selectedSpot;
 
     @Autowired
-    public DetailSpotServiceImpl(@Qualifier("postgres") IDetailSpotDao spotDao) {
+    public DetailSpotServiceImpl(@Qualifier("mysql") IDetailSpotDao spotDao) {
         this.dao = spotDao;
     }
 

@@ -4,6 +4,7 @@ import com.watchtower_machine.model.DetailSpot;
 import com.watchtower_machine.service.IDetailSpotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class DetailSpotController implements IDetailSpotController{
 
     @PostMapping("/createSpot")
     @Override
-    public String createObject(@RequestBody DetailSpot spot) {
+    public String createObject(@NonNull @RequestBody DetailSpot spot) {
         spotService.create(spot);
 
         if(spot != null)

@@ -1,21 +1,45 @@
 package com.watchtower_machine.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.lang.NonNull;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Surf_Spots")
 public class DetailSpot {
 
+    @Id
+    @Column(name = "id", unique = true)
+    @NonNull
     private int id;
+    @NonNull
+    @Column(name ="msw_id", unique = true)
     private int mswId;
+    @Column(name = "nom")
     private String nom;
+    @Column(name = "houle")
     private String houle;
+    @Column(name = "orientation_houle")
     private String orientationHoule;
+    @Column(name = "hauteur_saturation")
     private double hauteurSaturation;
+    @Column(name = "type")
     private String type;
+    @Column(name = "region")
     private String region;
+    @Column(name = "maree")
     private String maree;
+    @Column(name = "vent")
     private String vent;
+    @Column(name = "direction_vent")
     private String directionVent;
+    @Column(name = "coordonnees")
     private String coordonnees;
+    @Column(name = "selected")
     private Boolean isSelected;
 
     public DetailSpot(@JsonProperty("id") int id,
