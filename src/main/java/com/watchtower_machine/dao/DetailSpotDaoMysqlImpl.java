@@ -21,13 +21,18 @@ public class DetailSpotDaoMysqlImpl implements IDetailSpotDao {
     }
 
     @Override
-    //TODO: Try Catch IllegalStateException -> Fermer la transaction si erreur.
     public int createSpot(int id, DetailSpot spot) {
-        System.out.println("Dao MySql: Spot creation.");
-        session = Connmanagement.getSession();
-        session.beginTransaction();
-        session.save(spot);
-        session.getTransaction().commit();
+
+        try {
+            System.out.println("Dao MySql: Spot creation.");
+            session = Connmanagement.getSession();
+            session.beginTransaction();
+            session.save(spot);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        }
 
         return 0;
     }
