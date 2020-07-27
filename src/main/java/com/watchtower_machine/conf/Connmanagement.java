@@ -18,6 +18,7 @@ public class Connmanagement {
         if (session == null) {
             System.out.println("*** No actual session, initiating new session... ***");
             session = sessionFactory.openSession();
+            System.out.println("*** Session initiated *** " + session.toString());
         }
         System.out.println("*** Connection initiated ***");
     }
@@ -25,6 +26,8 @@ public class Connmanagement {
     public static void createConnection() {
         if (sessionFactory == null || session == null) {
             new Connmanagement();
+        } else {
+            System.out.println("*** Connection already initiated ***");
         }
     }
 

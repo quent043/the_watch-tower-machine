@@ -1,6 +1,8 @@
 package com.watchtower_machine.dao;
 
+import com.watchtower_machine.conf.Connmanagement;
 import com.watchtower_machine.model.DetailSpot;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,18 +11,29 @@ import java.util.Optional;
 
 @Repository("mysql")
 public class DetailSpotDaoMysqlImpl implements IDetailSpotDao {
-    //TODO allSpots simule la DB en attendant que je la crée
     private List<DetailSpot> allSpots = new ArrayList<>();
     private Optional<DetailSpot> selectedSpot;
+    private Session session;
+
+    public DetailSpotDaoMysqlImpl(List<DetailSpot> allSpots, Optional<DetailSpot> selectedSpot) {
+        this.allSpots = allSpots;
+        this.selectedSpot = selectedSpot;
+    }
 
     @Override
+    //TODO: Try Catch IllegalStateException -> Fermer la transaction si erreur.
     public int createSpot(int id, DetailSpot spot) {
         System.out.println("Dao MySql: Spot creation.");
-        this.allSpots.add(spot);
+        session = Connmanagement.getSession();
+        session.beginTransaction();
+        session.save(spot);
+        session.getTransaction().commit();
+
         return 0;
     }
 
     @Override
+    //TODO: pas encore connecté à la DB
     public int updateSpotById(int id, DetailSpot newSpotData) {
         return selectSpotById(id)
                 .map(p -> {
@@ -37,11 +50,26 @@ public class DetailSpotDaoMysqlImpl implements IDetailSpotDao {
     @Override
     public List<DetailSpot> selectAllSpots() {
         System.out.println("MySql Dao - selectAllSpots():");
+
+        session = Connmanagement.getSession();
+        session.beginTransaction();
+        allSpots = (List<DetailSpot>) session.createQuery("FROM DetailSpot").list();
+        session.getTransaction().commit();
+
         return allSpots;
     }
 
     @Override
     public Optional<DetailSpot> selectSpotById(int id) {
+        //TODO: Faire une querry spécifique à un ID, et non faire un getAll(). PB: querry pas finie, et querry ne détecte pas ke type de variable
+//        session = Connmanagement.getSession();
+//        session.beginTransaction();
+//        selectedSpot = (Optional<DetailSpot>) session.createQuery("FROM DetailSpot WHERE ").stream()
+//                .filter(spot -> spot.getId() == id)
+//                .findFirst();
+//        session.getTransaction().commit();
+
+        allSpots = selectAllSpots();
         selectedSpot = allSpots.stream()
                 .filter(spot -> spot.getId() == id)
                 .findFirst();
@@ -62,7 +90,11 @@ public class DetailSpotDaoMysqlImpl implements IDetailSpotDao {
             System.out.println("MySql Dao: The surf spot with the id: "+ id + " does not exist in the database");
             return 0;
         }else {
-            allSpots.remove(potentialDetailSpot.get());
+            session = Connmanagement.getSession();
+            session.beginTransaction();
+            session.delete(potentialDetailSpot.get());
+            session.getTransaction().commit();
+
             System.out.println("MySql Dao: Surf spot: "+ potentialDetailSpot.get().getNom() + " deleted from the database.");
             return 1;
         }

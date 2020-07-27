@@ -70,6 +70,9 @@ public class DetailSpot {
         this.isSelected = isSelected;
     }
 
+    public DetailSpot() {
+    }
+
     public int getId() {
         return id;
     }
