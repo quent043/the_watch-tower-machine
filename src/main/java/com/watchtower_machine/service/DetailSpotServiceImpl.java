@@ -22,7 +22,6 @@ public class DetailSpotServiceImpl implements IDetailSpotService{
     }
 
     @Override
-    //TODO On retourne un int en attendant de set JPA Hibernate, où on retournera un DetailSpot directement.
     public int create(DetailSpot spot) {
         System.out.println("DetailSpotService Mk1: Spot Creation");
         dao.createSpot(spot);
