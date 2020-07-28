@@ -21,17 +21,20 @@ public class DetailSpotDaoPostgresImpl implements IDetailSpotDao {
     }
 
     @Override
-    public int updateSpotById(int id, DetailSpot newSpotData) {
-        return selectSpotById(id)
+    public void updateSpotById(int id, DetailSpot newSpotData) {
+        selectSpotById(id)
                 .map(p -> {
                     int indexOfSpotToUpdate = allSpots.indexOf(p);
                     if (indexOfSpotToUpdate >= 0) {
                         allSpots.set(indexOfSpotToUpdate, newSpotData);
-                        return 1;
+                    } else {
+                        System.out.println("Dao Postgres: No Spot to update");
                     }
                     return 0;
-                }).orElse(0);
+                });
     }
+
+
 
 
     @Override

@@ -17,14 +17,5 @@
 
 
         <mapping class="com.watchtower_machine.model.DetailSpot" />
-<!--        <mapping class="com.fr.adaming.entity.Bateau" />-->
-<!--        <mapping class="com.fr.adaming.entity.FeuilleDeRoute" />-->
-<!--        <mapping class="com.fr.adaming.entity.Ravitaillement" />-->
-<!--        <mapping class="com.fr.adaming.entity.Pillage" />-->
-<!--        <mapping class="com.fr.adaming.entity.Stock" />-->
-<!--        <mapping class="com.fr.adaming.entity.Operation" />-->
-
-
-
     </session-factory>
 </hibernate-configuration>

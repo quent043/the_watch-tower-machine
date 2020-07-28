@@ -23,15 +23,17 @@ public class DetailSpotController implements IDetailSpotController{
         this.spotService = service;
     }
 
+    //TODO creer 2eme service de note ?
+
     @PostMapping("/createSpot")
     @Override
-    public String createObject(@NonNull @RequestBody DetailSpot spot) {
-        spotService.create(spot);
+    public void createObject(@NonNull @RequestBody DetailSpot spot) {
+        try {
+            spotService.create(spot);
+        } catch (Exception e) {
+            e.printStackTrace();
 
-        if(spot != null)
-            return "Spot Successfully Created";
-        else
-        return "Problem while creating new spot (controller)";
+        }
     }
 
     @PutMapping(path = "{id}")

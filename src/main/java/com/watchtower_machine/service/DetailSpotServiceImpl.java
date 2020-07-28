@@ -33,12 +33,13 @@ public class DetailSpotServiceImpl implements IDetailSpotService{
     public int update(int id, DetailSpot newSpotData) {
         System.out.println("DetailSpotService Mk1: updateSpot() running...");
         selectedSpot = dao.selectSpotById(id);
+        //On vérifie que le spot à update existe
         if (selectedSpot.isEmpty()) {
-            System.out.println("DetailSpotService Mk1: - updateSpot(): surf spot with id: " + id + "did not return anything");
+            System.out.println("DetailSpotService Mk1: - updateSpot(): surf spot with id: " + id + " did not return anything");
             return 0;
         } else {
             dao.updateSpotById(id, newSpotData);
-            //System.out.println("DetailSpotService Mk1: - updateSpot(): surf spot with id: " + id + "successfully deleted");
+            System.out.println("DetailSpotService Mk1: - updateSpot(): surf spot with id: " + id + " successfully updated");
             return 1;
         }
     }
@@ -48,11 +49,11 @@ public class DetailSpotServiceImpl implements IDetailSpotService{
         System.out.println("DetailSpotService Mk1: deleteSpot() running...");
         selectedSpot = dao.selectSpotById(id);
         if (selectedSpot.isEmpty()) {
-            System.out.println("DetailSpotService Mk1: - deleteSpot(): surf spot with id: " + id + "did not return anything");
+            System.out.println("DetailSpotService Mk1: - deleteSpot(): surf spot with id: " + id + " did not return anything");
             return 0;
         } else {
             dao.deleteSpot(id);
-            //System.out.println("DetailSpotService Mk1: - deleteSpot(): surf spot with id: " + id + "successfully deleted");
+            System.out.println("DetailSpotService Mk1: - deleteSpot(): surf spot with id: " + id + " successfully deleted");
          return 1;
         }
     }

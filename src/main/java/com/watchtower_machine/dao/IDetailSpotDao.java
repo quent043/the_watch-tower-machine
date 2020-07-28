@@ -19,7 +19,7 @@ public interface IDetailSpotDao {
 
     Optional<DetailSpot> selectSpotById(int id);
 
-    int updateSpotById(int id, DetailSpot newSpotData);
+    void updateSpotById(int id, DetailSpot newSpotData);
 
     int deleteSpot (int id);
 }

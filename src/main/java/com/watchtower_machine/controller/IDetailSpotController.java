@@ -5,7 +5,7 @@ import com.watchtower_machine.model.DetailSpot;
 
 public interface IDetailSpotController {
 
-    public String createObject (DetailSpot object);
+    public void createObject (DetailSpot object);
 
     public String updateObject (int id, DetailSpot newSpotData);
 
