@@ -29,9 +29,9 @@ public class DetailSpotDaoMysqlImpl implements IDetailSpotDao {
             session.beginTransaction();
             session.save(spot);
             session.getTransaction().commit();
-            System.out.println("MySql Dao - selectAllSpots(): Surf spot: " + spot.getNom() + "successfully created");
+            System.out.println("MySql Dao - createSpot(): Surf spot: " + spot.getNom() + "successfully created");
         } catch (Exception e) {
-            System.out.println("MySql Dao - selectAllSpots(): - Problem while creating spot with id: " + spot.getId());
+            System.out.println("MySql Dao - createSpot(): - Problem while creating spot with id: " + spot.getId());
             session.getTransaction().rollback();
             e.printStackTrace();
         }
