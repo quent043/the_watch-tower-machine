@@ -47,6 +47,15 @@
 				<artifactId>spring-boot-starter-jdbc</artifactId>
 			</dependency>
 
+
+<!--			Other-->
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<scope>test</scope>
+			</dependency>
+
+
 <!--			DATABASES-->
 			<dependency>
 				<groupId>org.postgresql</groupId>
