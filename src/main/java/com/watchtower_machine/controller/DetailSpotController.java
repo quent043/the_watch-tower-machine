@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+//TODO: Ajouter un @ExceptionHandler
 @RequestMapping("/the_watch_tower")
 @RestController
 public class DetailSpotController implements IDetailSpotController{
