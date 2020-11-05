@@ -18,6 +18,7 @@ public class DetailSpotController implements IDetailSpotController{
     private List<DetailSpot> allSpots;
     private Optional<DetailSpot> selectedSpot;
 
+//TODO: Configurer ça dans un @Configuration en Java
     @Autowired
     public DetailSpotController(@Qualifier("spotServiceMk1") IDetailSpotService service) {
         this.spotService = service;
@@ -65,14 +66,14 @@ public class DetailSpotController implements IDetailSpotController{
     @GetMapping(path = "{id}")
     @Override
     public DetailSpot readObjectById(@PathVariable("id") int id) {
-        selectedSpot = spotService.readById(id);
+        var selectedSpot = spotService.readById(id);
 
 //        return selectedSpot;
         if (selectedSpot.isEmpty()){
             System.out.println("readObjectById request did not retrieve any value (controller)");
         }
         return selectedSpot
-                .orElse(null);
+                .orElse(new DetailSpot());
     }
 
     @GetMapping("/getAll")
