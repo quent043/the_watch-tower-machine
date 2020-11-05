@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Repository("mysql")
+//@Repository
+//        ("mysql")
 public class DetailSpotDaoMysqlImpl implements IDetailSpotDao {
     private List<DetailSpot> allSpots = new ArrayList<>();
     private Optional<DetailSpot> selectedSpot;
@@ -18,6 +19,10 @@ public class DetailSpotDaoMysqlImpl implements IDetailSpotDao {
     public DetailSpotDaoMysqlImpl(List<DetailSpot> allSpots, Optional<DetailSpot> selectedSpot) {
         this.allSpots = allSpots;
         this.selectedSpot = selectedSpot;
+    }
+
+    public DetailSpotDaoMysqlImpl() {
+
     }
 
     @Override
