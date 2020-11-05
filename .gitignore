@@ -29,7 +29,7 @@ build/
 
 ### VS Code ###
 .vscode/
-main/resources
+src/main/resources
 
 
 
