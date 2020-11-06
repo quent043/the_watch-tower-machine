@@ -4,14 +4,12 @@ import com.watchtower_machine.dao.DetailSpotDaoMysqlImpl;
 import com.watchtower_machine.dao.DetailSpotDaoPostgresImpl;
 import com.watchtower_machine.dao.IDetailSpotDao;
 import com.watchtower_machine.service.DetailSpotServiceImpl;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-//@PropertySource("application.properties")
+@PropertySource("business.properties")
 //TODO: Possible to define in a property file the name of the dependency to be injected?
 public class RestControllerConf {
 
