@@ -65,7 +65,8 @@ public class DetailSpotServiceImpl implements IDetailSpotService{
 //        if (dao.selectSpotById(id) != null) {
             System.out.println("DetailSpotService Mk1: selectedSpot() running...");
             selectedSpot = dao.selectSpotById(id);
-            System.out.println("DetailSpotService Mk1: selectedSpot:" + selectedSpot.get().getNom());
+            selectedSpot.ifPresentOrElse(detailSpot -> System.out.println("DetailSpotService Mk1: selectedSpot:" + detailSpot.getNom()), () -> System.out.println("DetailSpotService Mk1: No Spot retrieved"));
+//            System.out.println("DetailSpotService Mk1: selectedSpot:" + selectedSpot.ifPresentOrElse(detailSpot -> System.out.println(detailSpot.getNom()), () -> ););
 //            return selectedSpot;
 //        } else {
 //

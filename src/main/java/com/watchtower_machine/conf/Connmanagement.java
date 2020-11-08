@@ -31,6 +31,12 @@ public class Connmanagement {
         }
     }
 
+    public static void closeSession() {
+        session.close();
+        session = null;
+        System.out.println("*** Session closed ***");
+    }
+
     public static void closeConnection() {
         session.close();
         sessionFactory.close();

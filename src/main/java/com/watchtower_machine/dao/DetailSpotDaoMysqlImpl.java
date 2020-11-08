@@ -78,6 +78,7 @@ public class DetailSpotDaoMysqlImpl implements IDetailSpotDao {
             session.beginTransaction();
             allSpots = (List<DetailSpot>) session.createQuery("FROM DetailSpot").list();
             session.getTransaction().commit();
+//            session.close();
             System.out.println("MySql Dao - selectAllSpots(): - All Spots Selected");
         } catch (Exception e) {
             System.out.println("MySql Dao - selectAllSpots(): - Problem while selecting all spots");

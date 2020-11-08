@@ -1,5 +1,6 @@
 package com.watchtower_machine.controller;
 
+import com.watchtower_machine.aop.LoggingAop;
 import com.watchtower_machine.model.DetailSpot;
 import com.watchtower_machine.service.IDetailSpotService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,7 @@ public class DetailSpotController implements IDetailSpotController{
 
         }
     }
+
 
     @PutMapping(path = "{id}")
     @Override
@@ -79,6 +81,7 @@ public class DetailSpotController implements IDetailSpotController{
     }
 
     @GetMapping("/getAll")
+    @LoggingAop
     @Override
     public List<DetailSpot> readAll() {
         allSpots = spotService.readAll();
