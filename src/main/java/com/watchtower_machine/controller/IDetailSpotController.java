@@ -1,7 +1,7 @@
 package com.watchtower_machine.controller;
 
 import java.util.List;
-import com.watchtower_machine.model.DetailSpot;
+import com.watchtower_machine.entity.DetailSpot;
 
 public interface IDetailSpotController {
 

@@ -1,6 +1,6 @@
 package com.watchtower_machine.service;
 
-import com.watchtower_machine.model.DetailSpot;
+import com.watchtower_machine.entity.DetailSpot;
 
 import java.util.List;
 import java.util.Optional;

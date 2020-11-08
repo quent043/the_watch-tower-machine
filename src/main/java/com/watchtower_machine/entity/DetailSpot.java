@@ -1,4 +1,4 @@
-package com.watchtower_machine.model;
+package com.watchtower_machine.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.lang.NonNull;
