@@ -11,8 +11,7 @@ public class WatchtowerMachineApplication {
 
 		SpringApplication.run(WatchtowerMachineApplication.class, args);
 		System.out.println("Yo dude");
-		Connmanagement.createConnection();
-		//TODO: Check si il n'y a pas un "Spring Init" pour faire ça.
+//		Connmanagement.createConnection(); <----- Géré dans classe DatabaseInit
 	}
 
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Repository("postgres")
+//@Repository("postgres")
 public class DetailSpotDaoPostgresImpl implements IDetailSpotDao {
     //TODO allSpots simule la DB en attendant que je la crée
     private List<DetailSpot> allSpots = new ArrayList<>();

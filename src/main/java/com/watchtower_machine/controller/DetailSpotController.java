@@ -19,9 +19,10 @@ public class DetailSpotController implements IDetailSpotController{
     private List<DetailSpot> allSpots;
     private Optional<DetailSpot> selectedSpot;
 
-//TODO: Configurer ça dans un @Configuration en Java
-    @Autowired
-    public DetailSpotController(@Qualifier("spotServiceMk1") IDetailSpotService service) {
+//    @Autowired
+    public DetailSpotController(
+//            @Qualifier("spotServiceMk1")
+                    IDetailSpotService service) {
         this.spotService = service;
     }
 

@@ -9,15 +9,18 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service("spotServiceMk1")
+//@Service
+//        ("spotServiceMk1")
 public class DetailSpotServiceImpl implements IDetailSpotService{
 
     private final IDetailSpotDao dao;
     private List<DetailSpot> allSpots;
     private Optional<DetailSpot> selectedSpot;
 
-    @Autowired
-    public DetailSpotServiceImpl(@Qualifier("mysql") IDetailSpotDao spotDao) {
+//    @Autowired
+    public DetailSpotServiceImpl(
+//            @Qualifier("mysql")
+                    IDetailSpotDao spotDao) {
         this.dao = spotDao;
     }
 
