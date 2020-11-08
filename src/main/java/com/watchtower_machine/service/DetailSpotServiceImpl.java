@@ -1,7 +1,7 @@
 package com.watchtower_machine.service;
 
 import com.watchtower_machine.dao.IDetailSpotDao;
-import com.watchtower_machine.model.DetailSpot;
+import com.watchtower_machine.entity.DetailSpot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -65,7 +65,8 @@ public class DetailSpotServiceImpl implements IDetailSpotService{
 //        if (dao.selectSpotById(id) != null) {
             System.out.println("DetailSpotService Mk1: selectedSpot() running...");
             selectedSpot = dao.selectSpotById(id);
-            System.out.println("DetailSpotService Mk1: selectedSpot:" + selectedSpot.get().getNom());
+            selectedSpot.ifPresentOrElse(detailSpot -> System.out.println("DetailSpotService Mk1: selectedSpot:" + detailSpot.getNom()), () -> System.out.println("DetailSpotService Mk1: No Spot retrieved"));
+//            System.out.println("DetailSpotService Mk1: selectedSpot:" + selectedSpot.ifPresentOrElse(detailSpot -> System.out.println(detailSpot.getNom()), () -> ););
 //            return selectedSpot;
 //        } else {
 //

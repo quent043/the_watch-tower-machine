@@ -1,7 +1,7 @@
 package com.watchtower_machine.dao;
 
 import com.watchtower_machine.conf.Connmanagement;
-import com.watchtower_machine.model.DetailSpot;
+import com.watchtower_machine.entity.DetailSpot;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
@@ -78,6 +78,7 @@ public class DetailSpotDaoMysqlImpl implements IDetailSpotDao {
             session.beginTransaction();
             allSpots = (List<DetailSpot>) session.createQuery("FROM DetailSpot").list();
             session.getTransaction().commit();
+//            session.close();
             System.out.println("MySql Dao - selectAllSpots(): - All Spots Selected");
         } catch (Exception e) {
             System.out.println("MySql Dao - selectAllSpots(): - Problem while selecting all spots");

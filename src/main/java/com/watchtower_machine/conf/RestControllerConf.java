@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("business.properties")
+//@PropertySource("/business.properties")
 //TODO: Possible to define in a property file the name of the dependency to be injected?
 public class RestControllerConf {
 

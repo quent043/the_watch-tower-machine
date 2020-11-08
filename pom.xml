@@ -52,8 +52,17 @@
 				<artifactId>spring-boot-starter-security</artifactId>
 			</dependency>
 
+			<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+			<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+<!--			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>5.2.10.RELEASE</version>
+			</dependency>-->
 
-<!--			Other-->
+
+
+			<!--			Other-->
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpclient</artifactId>
