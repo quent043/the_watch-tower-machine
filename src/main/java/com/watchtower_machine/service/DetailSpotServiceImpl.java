@@ -1,10 +1,7 @@
 package com.watchtower_machine.service;
 
 import com.watchtower_machine.dao.IDetailSpotDao;
-import com.watchtower_machine.model.DetailSpot;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
+import com.watchtower_machine.entity.DetailSpot;
 
 import java.util.List;
 import java.util.Optional;

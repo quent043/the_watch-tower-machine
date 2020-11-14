@@ -1,9 +1,8 @@
 package com.watchtower_machine.dao;
 
 import com.watchtower_machine.conf.Connmanagement;
-import com.watchtower_machine.model.DetailSpot;
+import com.watchtower_machine.entity.DetailSpot;
 import org.hibernate.Session;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;

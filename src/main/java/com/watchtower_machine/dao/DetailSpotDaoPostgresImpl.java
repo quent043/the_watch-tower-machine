@@ -1,7 +1,6 @@
 package com.watchtower_machine.dao;
 
-import com.watchtower_machine.model.DetailSpot;
-import org.springframework.stereotype.Repository;
+import com.watchtower_machine.entity.DetailSpot;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -29,9 +29,11 @@ build/
 
 ### VS Code ###
 .vscode/
-src/main/resources
 /logs
 
+
+### Ressources ###
+src/main/resources
 
 
 

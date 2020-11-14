@@ -1,10 +1,8 @@
 package com.watchtower_machine.controller;
 
 import com.watchtower_machine.aop.LoggingAop;
-import com.watchtower_machine.model.DetailSpot;
+import com.watchtower_machine.entity.DetailSpot;
 import com.watchtower_machine.service.IDetailSpotService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
