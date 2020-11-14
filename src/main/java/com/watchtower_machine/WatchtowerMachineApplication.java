@@ -1,10 +1,5 @@
 package com.watchtower_machine;
 
-import com.watchtower_machine.conf.Connmanagement;
-import com.watchtower_machine.entity.Admin;
-import com.watchtower_machine.entity.BasicUser;
-import com.watchtower_machine.entity.User;
-import org.hibernate.Session;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

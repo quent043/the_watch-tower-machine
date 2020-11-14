@@ -27,8 +27,6 @@ public class DetailSpotController implements IDetailSpotController{
         this.spotService = service;
     }
 
-    //TODO creer 2eme service de note ?
-
     @PostMapping("/createSpot")
     @Override
     public void createObject(@NonNull @RequestBody DetailSpot spot) {
@@ -39,7 +37,6 @@ public class DetailSpotController implements IDetailSpotController{
 
         }
     }
-
 
     @PutMapping(path = "{id}")
     @Override

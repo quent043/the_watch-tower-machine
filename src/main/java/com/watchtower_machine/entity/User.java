@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+//TODO: Implement l'interface UserDetails pour que Sprign Security marche
 @MappedSuperclass
 public abstract class User {
     @Id
@@ -29,6 +30,9 @@ public abstract class User {
         this.surName = surName;
         this.userName = userName;
         this.password = password;
+    }
+
+    public User() {
     }
 
     @Override

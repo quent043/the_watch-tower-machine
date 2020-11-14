@@ -1,5 +1,6 @@
 package com.watchtower_machine.conf;
 
+import com.watchtower_machine.controller.UserRestController;
 import com.watchtower_machine.dao.DetailSpotDaoMysqlImpl;
 import com.watchtower_machine.dao.DetailSpotDaoPostgresImpl;
 import com.watchtower_machine.dao.IDetailSpotDao;
@@ -7,6 +8,7 @@ import com.watchtower_machine.service.DetailSpotServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.web.bind.annotation.RestController;
 
 @Configuration
 //@PropertySource("/business.properties")
@@ -27,16 +29,23 @@ public class RestControllerConf {
         return postgre;
     }
 
-    //**** REST Controller ****
+    //**** Service ****
     @Bean
     public DetailSpotServiceImpl spotServiceMk1(IDetailSpotDao mySqlDao) {
         DetailSpotServiceImpl serviceImpl = new DetailSpotServiceImpl(mySqlDao);
         return serviceImpl;
     }
 
+
+    //Sera à initialiser la connection à la DB au lancement
     @Bean(initMethod = "databaseConnectionInitializer")
     public DatabaseInit initializer(){
         return new DatabaseInit();
     }
-    
+
+//    @Bean
+//    public UserRestController userRestController() {
+//        UserRestController userRestController = new UserRestController();
+//        return userRestController;
+//    }
 }
