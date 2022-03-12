@@ -73,8 +73,8 @@ public class DetailSpotController implements IDetailSpotController{
 //        return selectedSpot;
         if (selectedSpot.isEmpty()){
             System.out.println("readObjectById request did not retrieve any value (controller)");
-        }
-        return selectedSpot
+        }     return selectedSpot
+
                 .orElse(new DetailSpot());
     }
 

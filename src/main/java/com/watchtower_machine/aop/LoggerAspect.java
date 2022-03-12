@@ -16,7 +16,7 @@ public class LoggerAspect {
     private static final Logger LOGGER = LoggerFactory.getLogger("restController");
     private static final Logger LOGGER2 = LoggerFactory.getLogger("STDOUT");
 
-    //TODO: Make il perf reader
+    //TODO: Make it perf reader
     @Around("@annotation(com.watchtower_machine.aop.LoggingAop)")
     public Object logAround (ProceedingJoinPoint joinPoint) throws Throwable {
         LOGGER.info("Method: {} before execution", joinPoint.getSignature().toString());

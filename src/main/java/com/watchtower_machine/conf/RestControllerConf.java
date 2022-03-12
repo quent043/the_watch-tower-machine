@@ -27,7 +27,7 @@ public class RestControllerConf {
         return postgre;
     }
 
-    //**** REST Controller ****
+    //**** Service ****
     @Bean
     public DetailSpotServiceImpl spotServiceMk1(IDetailSpotDao mySqlDao) {
         DetailSpotServiceImpl serviceImpl = new DetailSpotServiceImpl(mySqlDao);
